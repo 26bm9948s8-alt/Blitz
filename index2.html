@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F5 GRAND BLITZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --lav:   #9B8FC4;
+      --lav-lt:#C4B8E8;
+      --lav-bg:#edeaf6;
+      --lav-dk:#6b5fa0;
+      --ink:   #0A0A0A;
+      --muted: #aaa;
+      --border:#ddd8f0;
+    }
+    body {
+      background: #F5F2EE;
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2.5rem 1.25rem;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 5%, rgba(155,143,196,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 95%, rgba(196,184,232,0.15) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; width: 100%; max-width: 400px; display: flex; flex-direction: column; align-items: center; }
+    .header { text-align: center; margin-bottom: 3rem; animation: fadeUp .7s ease both; }
+    .eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--lav); margin-bottom: 0.6rem; font-weight: 400; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.2rem, 14vw, 5rem); letter-spacing: 0.04em; line-height: 0.95; color: var(--lav); margin-bottom: 0.5rem; }
+    .sub { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 300; }
+    .rule { width: 100%; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; animation: fadeUp .7s .1s ease both; }
+    .rule::before, .rule::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+    .rule em { font-style: normal; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .links { width: 100%; display: flex; flex-direction: column; gap: 0.6rem; }
+    .link-btn {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.05rem 1.25rem;
+      background: var(--lav-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em;
+      position: relative; overflow: hidden;
+      transition: border-color .2s, background .2s, transform .18s;
+      animation: fadeUp .55s ease both;
+    }
+    .link-btn::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--lav-dk); transform: scaleY(0); transform-origin: bottom; transition: transform .22s ease; }
+    .link-btn:hover { border-color: var(--lav); background: #e6e2f5; transform: translateY(-2px); }
+    .link-btn:hover::after { transform: scaleY(1); }
+    .link-btn:nth-child(1) { animation-delay: .2s; }
+    .link-btn:nth-child(2) { animation-delay: .28s; }
+    .link-btn:nth-child(3) { animation-delay: .36s; }
+    .icon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: rgba(155,143,196,0.18); border: 1px solid var(--border); }
+    .txt { flex: 1; }
+    .txt strong { display: block; font-size: 0.88rem; letter-spacing: 0.02em; color: var(--ink); }
+    .txt small { color: var(--lav); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.04em; }
+    .arrow { color: var(--lav-lt); font-size: 1rem; flex-shrink: 0; transition: color .2s, transform .2s; }
+    .link-btn:hover .arrow { color: var(--lav-dk); transform: translateX(3px); }
+    .footer { margin-top: 2.5rem; text-align: center; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); animation: fadeUp .6s .5s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <p class="eyebrow">F5 Chess Club · 2026</p>
+      <h1>GRAND<br>BLITZ</h1>
+      <p class="sub">Шаховий клуб п'ятої хвилі</p>
+    </div>
+    <div class="rule"><em>посилання</em></div>
+    <div class="links">
+      <a class="link-btn" href="https://s3.chess-results.com/tnr1425281.aspx?lan=12" target="_blank" rel="noopener">
+        <div class="icon">♟</div>
+        <div class="txt"><strong>Турнірна таблиця</strong><small>Grand Blitz — результати</small></div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-btn" href="https://t.me/f5chess" target="_blank" rel="noopener">
+        <div class="icon">✈️</div>
+        <div class="txt"><strong>Telegram</strong><small>F5 Chess Club</small></div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-btn" href="https://www.instagram.com/f5_chess?igsh=NjN0aGU5ajEzMTRz" target="_blank" rel="noopener">
+        <div class="icon">📸</div>
+        <div class="txt"><strong>Instagram</strong><small>F5 Chess Club</small></div>
+        <span class="arrow">›</span>
+      </a>
+    </div>
+    <div class="footer">F5 · тут грають твої друзі</div>
+  </div>
+</body>
+</html>
